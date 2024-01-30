@@ -27,7 +27,7 @@
 .weather-details {
   height: 180px;
   width: 800px;
-  border-radius: 10px;
+  border-radius: 20px;
   padding-top: 20px;
   padding-left: 30px;
   position: relative;
@@ -105,7 +105,7 @@
   position: absolute;
   height: 250px;
   width: 250px;
-  background: rgb(162, 218, 254);
+  background: rgba(162, 218, 254, 0.8);
   border-radius: 50%;
   right: -60px;
   top: -65px;
@@ -115,7 +115,7 @@
   position: absolute;
   height: 320px;
   width: 320px;
-  background: rgb(127, 201, 255);
+  background: rgba(127, 201, 255, 0.7);
   border-radius: 50%;
   right: -78px;
   top: -91px;
@@ -142,6 +142,7 @@
   width: 100px;
   top: 10px;
   right: -10px;
+  transform: rotate(-30deg);
 }
 .weather-night .night-inner .big-cloud {
   position: absolute;
@@ -203,8 +204,38 @@
 }
 .weather-rainy .rainy-inner .thunder {
   position: absolute;
-  height: 100px;
-  width: 100px;
-  top: 130px;
-  right: 40px;
+  height: 80px;
+  width: 80px;
+  top: 152px;
+  right: 60px;
+}
+.weather-rainy .rainy-inner .rain-drops-v1 {
+  position: absolute;
+  transform: rotate(20deg);
+  width: 50px;
+  bottom: -41px;
+  right: 20px;
+}
+.weather-rainy .rainy-inner .rain-drops-v1 > span {
+  display: inline-block;
+  margin: 3px 8px;
+  height: 20px;
+  width: 6px;
+  border-radius: 80% 80% 40% 40%;
+  background: linear-gradient(to top, rgb(255, 255, 255), rgb(174, 245, 207));
+}
+.weather-rainy .rainy-inner .rain-drops-v2 {
+  position: absolute;
+  transform: rotate(20deg);
+  width: 50px;
+  bottom: -41px;
+  right: 150px;
+}
+.weather-rainy .rainy-inner .rain-drops-v2 > span {
+  display: inline-block;
+  margin: 3px 8px;
+  height: 20px;
+  width: 6px;
+  border-radius: 80% 80% 40% 40%;
+  background: linear-gradient(to top, rgb(252, 252, 252), rgb(174, 245, 207));
 }/*# sourceMappingURL=style.css.map */
