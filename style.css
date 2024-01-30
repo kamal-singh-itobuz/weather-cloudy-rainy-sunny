@@ -1,3 +1,10 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .main {
   height: 100vh;
   display: flex;
@@ -12,31 +19,37 @@
 
 .separator {
   height: 80px;
-  width: 4px;
+  width: 2px;
   background-color: rgb(255, 255, 255);
   border-radius: 100%;
 }
 
 .weather-details {
   height: 180px;
-  width: 740px;
+  width: 800px;
   border-radius: 10px;
-  padding-top: 5px;
-  padding-left: 60px;
+  padding-top: 20px;
+  padding-left: 30px;
   position: relative;
   overflow: hidden;
 }
-.weather-details .sunny-text, .weather-details .night-text, .weather-details .rainy-text {
+.weather-details .weather-text,
+.weather-details .temprature,
+.weather-details .day-date,
+.weather-details .city-name,
+.weather-details .weather-image {
+  display: none;
+}
+.weather-details .weather-text {
   color: white;
-  font-size: 25px;
+  font-size: 20px;
 }
 .weather-details .weather-content {
-  height: 100px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
-.weather-details .weather-content .sunny-temp, .weather-details .weather-content .night-temp, .weather-details .weather-content .rainy-temp {
+.weather-details .weather-content .temprature {
   color: white;
   font-size: 80px;
 }
@@ -44,84 +57,154 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 15px;
 }
-.weather-details .weather-content .day-location .mon-tues-sun {
-  margin-bottom: -40px;
-}
-.weather-details .weather-content .day-location .sunny-day, .weather-details .weather-content .day-location .night-day, .weather-details .weather-content .day-location .rainy-day {
+.weather-details .weather-content .day-location .day-date {
   color: white;
-  font-size: 25px;
+  font-size: 16px;
 }
 .weather-details .weather-content .day-location .location {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-.weather-details .weather-content .day-location .location .fransisco, .weather-details .weather-content .day-location .location .paris, .weather-details .weather-content .day-location .location .london {
+.weather-details .weather-content .day-location .location .city-name {
   color: white;
-  font-size: 25px;
+  font-size: 16px;
 }
-.weather-details .sunny-image, .weather-details .night-image, .weather-details .rainy-image {
+.weather-details .weather-image {
   position: absolute;
-  height: 200px;
-  width: 200px;
-  right: -24px;
-  top: -26px;
+  right: 0px;
+  top: 0px;
+}
+.weather-details .weather-image .weather-inner {
+  position: relative;
 }
 
 .weather-sunny {
-  background: rgb(46, 159, 255);
+  background: linear-gradient(to right, rgb(28, 147, 253), rgb(62, 166, 255), rgb(94, 186, 255));
 }
-.weather-sunny .night-text, .weather-sunny .rainy-text {
-  display: none;
+.weather-sunny .sunny-text,
+.weather-sunny .sunny-temp,
+.weather-sunny .sunny-day,
+.weather-sunny .fransisco,
+.weather-sunny .sunny-image {
+  display: block;
 }
-.weather-sunny .night-temp, .weather-sunny .rainy-temp {
-  display: none;
+.weather-sunny .sunny-inner .sun {
+  position: absolute;
+  height: 180px;
+  width: 180px;
+  background: linear-gradient(to bottom, rgb(254, 255, 178), rgb(254, 237, 139), rgb(252, 204, 67));
+  border-radius: 50%;
+  right: -38px;
+  top: -39px;
+  z-index: 3;
 }
-.weather-sunny .night-day, .weather-sunny .rainy-day {
-  display: none;
+.weather-sunny .sunny-inner .sun-shine-light {
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  background: rgb(162, 218, 254);
+  border-radius: 50%;
+  right: -60px;
+  top: -65px;
+  z-index: 2;
 }
-.weather-sunny .paris, .weather-sunny .london {
-  display: none;
-}
-.weather-sunny .night-image, .weather-sunny .rainy-image {
-  display: none;
+.weather-sunny .sunny-inner .sun-shine-lighter {
+  position: absolute;
+  height: 320px;
+  width: 320px;
+  background: rgb(127, 201, 255);
+  border-radius: 50%;
+  right: -78px;
+  top: -91px;
+  z-index: 1;
 }
 
 .weather-night {
-  background: rgb(46, 159, 255);
+  background: linear-gradient(to right, rgb(45, 98, 247), rgb(95, 109, 236), rgb(175, 127, 219));
 }
-.weather-night .sunny-text, .weather-night .rainy-text {
-  display: none;
+.weather-night .night-text,
+.weather-night .night-temp,
+.weather-night .night-day,
+.weather-night .paris,
+.weather-night .night-image {
+  display: block;
 }
-.weather-night .sunny-temp, .weather-night .rainy-temp {
-  display: none;
+.weather-night .night-inner .cloud-image {
+  height: 200px;
+  width: 200px;
 }
-.weather-night .sunny-day, .weather-night .rainy-day {
-  display: none;
+.weather-night .night-inner .moon {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 10px;
+  right: -10px;
 }
-.weather-night .fransisco, .weather-night .london {
-  display: none;
+.weather-night .night-inner .big-cloud {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: rgba(208, 200, 242, 0.8);
+  left: -100px;
+  top: 25px;
+  box-shadow: 0 0 10px white;
 }
-.weather-night .sunny-image, .weather-night .rainy-image {
-  display: none;
+.weather-night .night-inner .small-cloud {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: rgba(208, 200, 242, 0.6);
+  left: -30px;
+  top: 50px;
+  box-shadow: 0 0 10px white;
+}
+.weather-night .night-inner .smaller-cloud {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: rgba(208, 200, 242, 0.6);
+  left: -120px;
+  top: 130px;
+  box-shadow: 0 0 10px white;
+}
+.weather-night .night-inner .smallest-cloud {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: rgba(208, 200, 242, 0.6);
+  left: -80px;
+  top: 95px;
+  box-shadow: 0 0 10px white;
 }
 
 .weather-rainy {
-  background: linear-gradient(to right, rgb(46, 159, 255), rgb(94, 185, 255));
+  background: linear-gradient(to right, rgb(0, 191, 166), rgb(47, 211, 164), rgb(97, 236, 163));
 }
-.weather-rainy .night-text, .weather-rainy .sunny-text {
-  display: none;
+.weather-rainy .rainy-text,
+.weather-rainy .rainy-temp,
+.weather-rainy .rainy-day,
+.weather-rainy .london,
+.weather-rainy .rainy-image {
+  display: block;
 }
-.weather-rainy .night-temp, .weather-rainy .sunny-temp {
-  display: none;
+.weather-rainy .rainy-image {
+  top: -65px;
 }
-.weather-rainy .night-day, .weather-rainy .sunny-day {
-  display: none;
+.weather-rainy .rainy-inner .cloud-image {
+  height: 200px;
+  width: 200px;
 }
-.weather-rainy .paris, .weather-rainy .fransisco {
-  display: none;
-}
-.weather-rainy .night-image, .weather-rainy .sunny-image {
-  display: none;
+.weather-rainy .rainy-inner .thunder {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 130px;
+  right: 40px;
 }/*# sourceMappingURL=style.css.map */

@@ -3,43 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather-Design</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main">
-        <div class="weather-details weather-rainy">
+        <div class="weather-details weather-night">
             <div>
-                <p class="sunny-text">Sunny</p>
-                <p class="night-text">Cloud Night</p>
-                <p class="rainy-text">Rain</p>
+                <p class="sunny-text weather-text">Sunny</p>
+                <p class="night-text weather-text">Cloud Night</p>
+                <p class="rainy-text weather-text">Rain</p>
             </div>
             <div class="weather-content">
                 <div>
-                    <p class="sunny-temp">25&deg; </p>
-                    <p class="night-temp">22&deg; </p>
-                    <p class="rainy-temp">15&deg; </p>
+                    <p class="sunny-temp temprature">25&deg; </p>
+                    <p class="night-temp temprature">22&deg; </p>
+                    <p class="rainy-temp temprature">15&deg; </p>
                 </div>
                 <div class="separator"></div>
                 <div class="day-location">
                     <div class="mon-tues-sun">
-                        <p class="sunny-day">Monday, 21 September</p>
-                        <p class="night-day">Tuesday, 22 September</p>
-                        <p class="rainy-day">Sunday, 23 September</p>
+                        <p class="sunny-day day-date">Monday, 21 September</p>
+                        <p class="night-day day-date">Tuesday, 22 September</p>
+                        <p class="rainy-day day-date">Sunday, 23 September</p>
                     </div>
                     <div class="location">
                         <img class="location-icon" src="./images/location.svg" alt="location">
                         <div>
-                            <p class="fransisco">San Fransisco</p>
-                            <p class="paris">Paris</p>
-                            <p class="london">London</p>
+                            <p class="fransisco city-name">San Fransisco</p>
+                            <p class="paris city-name">Paris</p>
+                            <p class="london city-name">London</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <img class="sunny-image" src="./images/night.png" alt="Sunny">
-            <img class="night-image" src="./images/night.png" alt="Sunny">
-            <img class="rainy-image" src="./images/rainy.png" alt="Sunny">
+            <div class="sunny-image weather-image"> <!-- pos abs w.r.t weather-details -->
+                <div class="sunny-inner weather-inner"> <!-- pos relative -->
+                    <div class="sun"></div> <!-- pos abs w.r.t weather-inner -->
+                    <div class="sun-shine-light"></div> <!-- pos abs w.r.t weather-inner -->
+                    <div class="sun-shine-lighter"></div> <!-- pos abs w.r.t weather-inner -->
+                </div>
+            </div>
+            <div class="night-image weather-image">
+                <div class="night-inner weather-inner">
+                    <img class="cloud-image" src="./images/cloud.svg" alt="cloud-night">
+                    <img class="moon" src="./images/moon.svg" alt="moon image">
+                    <div class="big-cloud"></div>
+                    <div class="small-cloud"></div>
+                    <div class="smaller-cloud"></div>
+                    <div class="smallest-cloud"></div>
+                </div>
+            </div>
+            <div class="rainy-image weather-image">
+                <div class="rainy-inner weather-inner">
+                    <img class="cloud-image" src="./images/cloud.svg" alt="Sunny">
+                    <img class="thunder" src="./images/thunder.svg" alt="thunder">
+                </div>
+            </div>
         </div>
     </div>
 </body>
