@@ -168,49 +168,72 @@ $text-color: white;
             right: -10px;
             transform: rotate(-30deg);
         }
-
-        .big-cloud {
+        .small-clouds{
             position: absolute;
-            height: 30px;
-            width: 30px;
-            border-radius: 50%;
-            background: rgba(208, 200, 242, 0.8);
-            left: -100px;
-            top: 25px;
-            box-shadow: 0 0 10px white;
+            transform: rotate(45deg);
+            >span {
+                display: inline-block;
+            }
         }
-
-        .small-cloud {
-            position: absolute;
-            height: 20px;
-            width: 20px;
-            border-radius: 50%;
-            background: rgba(208, 200, 242, 0.6);
-            left: -30px;
-            top: 50px;
-            box-shadow: 0 0 10px white;
-        }
-
-        .smaller-cloud {
-            position: absolute;
-            height: 15px;
-            width: 15px;
-            border-radius: 50%;
-            background: rgba(208, 200, 242, 0.6);
-            left: -120px;
-            top: 130px;
-            box-shadow: 0 0 10px white;
-        }
-
-        .smallest-cloud {
-            position: absolute;
-            height: 10px;
+        .small-clouds-v1 {
+            height: 120px;
             width: 10px;
-            border-radius: 50%;
-            background: rgba(208, 200, 242, 0.6);
-            left: -80px;
-            top: 95px;
-            box-shadow: 0 0 10px white;
+            left: -70px;
+            top: 25px;
+            >span{
+                margin: 15px;
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                background-color: rgb(162,147,229);
+            }
+            >span:nth-child(2){
+                height: 6px;
+                width: 6px;
+            }
+        }
+        .small-clouds-v2 {
+            height: 180px;
+            width: 10px;
+            left: -135px;
+            top: -3px;
+            transform: rotate(40deg);
+            >span{
+                margin: 20px;
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                background-color: rgb(162,147,229);
+            }
+            >span:last-child{
+                height: 6px;
+                width: 6px;
+            }
+        }
+        .small-clouds-v3 {
+            height: 180px;
+            width: 10px;
+            left: -25px;
+            top: -3px;
+            transform: rotate(40deg);
+            >span{
+                margin: 20px;
+                height: 5px;
+                width: 5px;
+                border-radius: 50%;
+                background-color: rgb(162,147,229);
+            }
+            >span:first-child{
+                margin-bottom: 60px;
+            }
+            >span:nth-child(2){
+                height: 3px;
+                width: 3px;
+            }
+            // >span:last-child{
+            //     height: 6px;
+            //     width: 6px;
+            // }
         }
     }
 }
@@ -245,14 +268,18 @@ $text-color: white;
             top: 152px;
             right: 60px;
         }
-        .rain-drops-v1 {
+        .rain-drops{
             position: absolute;
             transform: rotate(20deg);
+            >span {
+                display: inline-block;
+            }
+        }
+        .rain-drops-v1 {
             width: 50px;
             bottom: -41px;
             right: 20px;
             >span{
-                display: inline-block;
                 margin: 3px 8px;
                 height: 20px;
                 width: 6px;
@@ -261,18 +288,42 @@ $text-color: white;
             }
         }
         .rain-drops-v2 {
-            position: absolute;
-            transform: rotate(20deg);
             width: 50px;
             bottom: -41px;
             right: 150px;
             >span{
-                display: inline-block;
                 margin: 3px 8px;
                 height: 20px;
                 width: 6px;
                 border-radius: 80% 80% 40% 40%;
                 background: linear-gradient(to top, rgb(252, 252, 252), rgb(174,245,207));
+            }
+        }
+        .rain-drops-v3 {
+            width: 140px;
+            bottom: -32px;
+            right: 206px;
+            >span {
+                margin: 10px 30px;
+                height: 25px;
+                width: 6px;
+                border-radius: 80% 80% 30% 30%;
+                background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(174,245,207, 0.5));
+            }
+        }
+        .rain-drops-v4 {
+            width: 150px;
+            bottom: -40px;
+            right: 224px;
+            >span{
+                margin: 10px 30px;
+                height: 30px;
+                width: 6px;
+                border-radius: 80% 80% 30% 30%;
+                background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(174,245,207, 0.5));
+            }
+            >span:nth-child(5){
+                visibility: hidden;
             }
         }
     }
